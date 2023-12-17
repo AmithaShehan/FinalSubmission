@@ -1,0 +1,24 @@
+@page "/course/delete"
+@model SIMS.Pages.Courses.CourseDelete
+@{
+    ViewData["Title"] = "Delete Course";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="text-primary">Are you sure you want to delete this entry?</h3>
+                    <h5 class="card-title">@Model.CourseData.CourseName</h5>
+                    <h6 class="card-title">Lecturer - @Model.CourseData.LecturerName</h6>
+                    <div class="card-body">
+                        <form method="post">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

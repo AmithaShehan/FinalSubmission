@@ -1,0 +1,45 @@
+@page
+@model SIMS.Pages.Students.StudentsIndex
+@{
+    ViewData["Title"] = "Student Information";
+}
+
+<div class="container">
+
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Course Id</th>
+                    <th scope="col">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var stud in Model.AllStudents)
+                {
+                    <tr>
+                        <th scope="row">@stud.Id</th>
+                        <td>@stud.StudentName</td>
+                        <td>@stud.City</td>
+                        <td>@stud.CourseId</td>
+                        <td>
+                            <a asp-page="./StudentUpdate" asp-route-id="@stud.Id">Edit</a> |
+                            <a asp-page="./StudentDelete" asp-route-id="@stud.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+    <div class="row mt-5">
+        <div class="col col-md-4 offset-md-4 d-flex justify-content-center">
+            <a asp-page="./StudentAdd" class="btn btn-primary">Create Student</a>
+        </div>
+    </div>
+</div>

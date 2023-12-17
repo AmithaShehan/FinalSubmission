@@ -1,0 +1,40 @@
+2) ii) CREATE DATABASE SIMS;
+
+CREATE TABLE Courses(
+Id int identity(1,1) NOT NULL,
+CourseName varchar(100),
+LecturerName varchar(100),
+CONSTRAINT PK_Course_Id PRIMARY KEY(Id)
+)
+
+CREATE TABLE Students(
+Id int identity(1,1) NOT NULL,
+StudentName varchar(100),
+City varchar(100),
+CourseId int NOT NULL
+CONSTRAINT PK_Student_Id PRIMARY KEY(Id)
+CONSTRAINT FK_Student_Id_CourseId FOREIGN KEY(CourseId)
+REFERENCES Courses(Id)
+)
+
+2) iii)
+
+INSERT INTO Courses (CourseName, LecturerName) VALUES ('Web Development', 'M.M. Herath');
+INSERT INTO Courses (CourseName, LecturerName) VALUES ('Graphic Design', 'J.S.V Piyasena');
+INSERT INTO Courses (CourseName, LecturerName) VALUES ('Mobile App Development', 'K.K.S. Dias');
+INSERT INTO Courses (CourseName, LecturerName) VALUES ('Java', 'U.H.S Dias');
+INSERT INTO Students (StudentName, City, CourseId) VALUES ('Kasun Gamage', 'Kandy', 2);
+INSERT INTO Students (StudentName, City, CourseId) VALUES ('Daniel Sam', 'Jaffna', 3);
+INSERT INTO Students (StudentName, City, CourseId) VALUES ('Hansi Silva', 'Colombo', 1);
+INSERT INTO Students (StudentName, City, CourseId) VALUES ('Ranidu Herath', 'Matara', 3);
+INSERT INTO Students (StudentName, City, CourseId) VALUES ('Praneeth Wijesinghe', 'Kandy', 4);
+INSERT INTO Students (StudentName, City, CourseId) VALUES ('Nuwani Herath', 'Rathnapura', 1);
+
+2) iv)
+A. SELECT * FROM Students;
+
+B. SELECT Id, StudentName, City FROM Students WHERE City = 'Kandy';
+
+C. UPDATE Students SET City = 'Galle' WHERE Id = 4;
+
+D.SELECT s.*, c.CourseName FROM Students s INNER JOIN Courses c ON s.CourseId = c.Id;

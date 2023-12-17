@@ -1,0 +1,32 @@
+@page
+@model SIMS.Pages.Students.StudentAdd
+@{
+    ViewData["Title"] = "Create Student";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col col-md-6 offset-md-3">
+            <form method="post">
+                <legend>Add a Student</legend>
+                <div class="mb-3">
+                    <label for="txtStudentName" class="form-label">Student Name</label>
+                    <input type="text" asp-for="NewStudent.StudentName" class="form-control" id="txtStudentName"
+                        aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="txtStudentCity" class="form-label">City</label>
+                    <input type="text" asp-for="NewStudent.City" class="form-control" id="txtStudentCity"
+                        aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="txtCourseId" class="form-label">Course Id</label>
+                    <input type="text" asp-for="NewStudent.CourseId" class="form-control" id="txtCourseId"
+                        aria-describedby="emailHelp">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Create Student</button>
+            </form>
+        </div>
+    </div>
+</div>

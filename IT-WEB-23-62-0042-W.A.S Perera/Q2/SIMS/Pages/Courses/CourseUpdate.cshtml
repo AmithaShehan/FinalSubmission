@@ -1,0 +1,28 @@
+@page "/course/edit"
+@model SIMS.Pages.Courses.CourseUpdate
+@{
+    ViewData["Title"] = "Update Course";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col col-md-6 offset-md-3">
+            <form method="post">
+                <legend>Update An Course</legend>
+                <input type="hidden" asp-for="CourseToUpdate.Id">
+                <div class="mb-3">
+                    <label for="txtCourseName" class="form-label">Course Name</label>
+                    <input type="text" asp-for="CourseToUpdate.CourseName" class="form-control" id="txtCourseName"
+                        aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="txtLecturerName" class="form-label">Lecturer Name</label>
+                    <input type="text" asp-for="CourseToUpdate.LecturerName" class="form-control" id="txtLecturerName"
+                        aria-describedby="emailHelp">
+                </div>    
+
+                <button type="submit" class="btn btn-primary">Update Course</button>
+            </form>
+        </div>
+    </div>
+</div>

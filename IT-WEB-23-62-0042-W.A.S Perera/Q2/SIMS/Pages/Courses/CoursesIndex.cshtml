@@ -1,0 +1,43 @@
+@page
+@model SIMS.Pages.Courses.CoursesIndex
+@{
+    ViewData["Title"] = "Course Information";
+}
+
+
+<div class="container">
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Course Name</th>
+                    <th scope="col">Lecturer Name</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var course in Model.AllCourses)
+                {
+                    <tr>
+                        <th scope="row">@course.Id</th> 
+                        <td>@course.CourseName</td>
+                        <td>@course.LecturerName</td>
+                            <td>
+                            <a asp-page="./CourseUpdate" asp-route-id="@course.Id">Edit</a> | 
+                            <a asp-page="./CourseDelete" asp-route-id="@course.Id">Delete</a>
+                        </td> 
+                        
+                    </tr>
+                } 
+
+            </tbody>
+        </table>
+    </div>
+        <div class="row mt-5">
+        <div class="col col-md-4 offset-md-4 d-flex justify-content-center">
+            <a asp-page="./CourseAdd" class="btn btn-primary">Create Course</a>
+        </div>
+    </div>
+</div>
