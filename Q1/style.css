@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.2s linear;
+}
+body{
+    width: 100%;
+}
+
+html {
+    min-height: 100vh;
+    transition: all 0.2s linear;
+}
+
+:root {
+    --pink: #2112a7;
+    --black: #000000;
+    --white: #fff;
+    --grey: #444;
+    --light-grey: #d1d1d1;
+    --dark-yellow: #ecb826;
+    --test-background: rgba(12, 12, 12, 0.3);
+}
+
+/* for negative margins */
+
+.negative-margins {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .m-t-n2 {
+    margin-top: -3rem!important;
+  }
+  
+
+.pink {
+    color: var(--pink);
+}
+
+.border-pink {
+    border-color: var(--pink) !important;
+}
+
+.bg-pink {
+    background: var(--pink);
+}
+
+.hero img {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.button-custom:hover {
+    background-color: var(--white);
+    border-color: var(--pink);
+    color: var(--pink) !important;
+}
+
+.text-grey{
+    color: var(--grey);
+}
+
+img {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-light-grey{
+    background: var(--light-grey);
+}
+
+.bg-dark-yellow{
+    background: var(--dark-yellow);
+}
+
+#numbers .row{
+    min-height: 400px;
+}
+
+#numbers p{
+    font-size: 4rem;
+}
+
+footer div{
+    margin: 0 auto;
+}
+
+@media (max-width:767px) {
+    .call-to-action {
+        display: flex;
+        justify-content: center;
+    }
+    #numbers p{
+      font-size: 3rem!important;
+    }
+    
+}
+
+@media (min-width: 768px){
+.mt-md-10 {
+    margin-top: 6rem!important;
+}
+
+}
+
+@media (max-width:576px) {
+    .call-to-action {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.hero button:hover {
+    box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.5);
+}
